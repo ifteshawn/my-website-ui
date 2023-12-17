@@ -1,6 +1,6 @@
 "use client";
 
-import { Particles } from "react-tsparticles";
+import { Particles } from "react-particles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import React, { useCallback } from "react";

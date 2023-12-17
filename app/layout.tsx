@@ -24,7 +24,7 @@ export default function RootLayout({
         // className={`${inter.className} flex relative justify-center w-full sm:w-[95%] sm:px:8 bg-zinc-50 text-gray-950`}
         className={`${inter.className} flex justify-center w-full bg-zinc-50 text-gray-950`}
       >
-        {/* <ParticlesContainer />  */}
+        <ParticlesContainer /> 
         <div className=" bg-white w-full h-full sm:w-[70%] sm:min-w-[40rem] sm:px-[2%] max-w-[90rem] z-[999] opacity-90">
           <HeaderPrac />
           {children}
