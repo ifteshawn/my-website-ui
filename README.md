@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/ifteshawn/MyWebsite/_apis/build/status%2Fifteshawn.MyWebsiteApi?branchName=main)](https://dev.azure.com/ifteshawn/MyWebsite/_build/latest?definitionId=1&branchName=main)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
