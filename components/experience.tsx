@@ -9,7 +9,16 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useTheme } from "@/context/theme-context";
 import { Experience, ProfileData } from "@/actions/fetchProfile";
-import {LuGraduationCap } from "react-icons/lu";
+import { LuGraduationCap } from "react-icons/lu";
+import { FaReact } from "react-icons/fa";
+import { CgWorkAlt } from "react-icons/cg";
+
+const icons = [
+  { icon: React.createElement(LuGraduationCap) },
+  { icon: React.createElement(CgWorkAlt) },
+  { icon: React.createElement(FaReact) },
+  { icon: React.createElement(FaReact) },
+];
 
 export default function Experience(props: ProfileData) {
   const { theme } = useTheme();
@@ -36,7 +45,7 @@ export default function Experience(props: ProfileData) {
                 borderRight: "0.4rem solid #9ca3af",
               }}
               date={item.date}
-              icon={item.icon}
+              icon={icons[index].icon}
               iconStyle={{
                 background:
                   theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
