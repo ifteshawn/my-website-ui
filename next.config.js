@@ -5,9 +5,13 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'images.unsplash.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'websiteiftestorage.blob.core.windows.net'
             }
         ]
-    }
+    },
 }
 
 module.exports = nextConfig

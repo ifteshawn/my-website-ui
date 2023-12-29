@@ -16,6 +16,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [],
+  darkMode: "class",
 };
 export default config;

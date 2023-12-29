@@ -42,11 +42,11 @@ export const links = [
     hash: "#about",
     icon: React.createElement(LuUser2),
   },
-  {
-    name: "Services",
-    hash: "#services",
-    icon: React.createElement(LuBriefcase),
-  },
+  // {
+  //   name: "Services",
+  //   hash: "#services",
+  //   icon: React.createElement(LuBriefcase),
+  // },
   {
     name: "Projects",
     hash: "#projects",
@@ -100,21 +100,21 @@ export const projectsData = [
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+    imageUrl: "https://websiteiftestorage.blob.core.windows.net/$web/corpcomment.png",
   },
   {
     title: "rmtDev",
     description:
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+    imageUrl: "https://websiteiftestorage.blob.core.windows.net/$web/rmtdev.png",
   },
   {
     title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: "https://websiteiftestorage.blob.core.windows.net/$web/wordanalytics.png",
   },
 ] as const;
 

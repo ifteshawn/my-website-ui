@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Carousel } from "flowbite-react";
-import Project from "./projectPrac";
+import Project from "./projectComponent";
 import { projectsData } from "@/lib/data";
 import { useState, useEffect } from "react";
 import { initFlowbite } from "flowbite";
@@ -32,7 +32,7 @@ export default function Test() {
           {projectsData.map((item, itemIndex) => {
             return (
               <div key={itemIndex}>
-                <Project {...item} />
+                {/* <Project {...item} /> */}
               </div>
             );
           })}

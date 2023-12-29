@@ -4,8 +4,11 @@ import { Particles } from "react-particles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import React, { useCallback } from "react";
+import { useTheme } from "@/context/theme-context";
 
 export default function ParticlesContainer() {
+  const { theme } = useTheme();
+
   //init
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
@@ -23,7 +26,7 @@ export default function ParticlesContainer() {
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
-        fullScreen: { enable: false },
+        fullScreen: { enable: true },
         background: {
           color: {
             value: "",
@@ -54,10 +57,10 @@ export default function ParticlesContainer() {
         },
         particles: {
           color: {
-            value: "#0d0a08",
+            value: theme === "light" ? "#0d0a08" : "#ffffff",
           },
           links: {
-            color: "#0d0a08",
+            color: theme === "light" ? "#0d0a08" : "#ffffff",
             distance: 150,
             enable: true,
             opacity: 0.5,

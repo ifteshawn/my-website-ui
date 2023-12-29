@@ -1,60 +1,74 @@
-"use client";
-
-import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Intro() {
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
-      <div className="flex justify-center items-center">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "tween",
-              duration: 0.2,
-            }}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100"
-              alt="Ifte's portrait"
-              width="192"
-              height="192"
-              quality="95"
-              priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-x1"
-            />
-          </motion.div>
+    // <section className="">
+    //   <div className="flex bg-primary/60 h-full w-full px-20 pt-10">
+    //     {/* text */}
+    //     {/* <div className="w-full h-full"> */}
+    //       <div
+    //         className="text-center flex flex-col justify-center xl:text-left
+    //             h-full container mx-auto"
+    //       >
+    //         {/* title */}
+    //         <h1 className="h1">
+    //           Transforming Ideas <br /> Into{" "}
+    //           <span className="text-amber-950">Digital Reality</span>
+    //         </h1>
+    //         <br />
+    //         {/* subtitle */}
+    //         <p className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">
+    //           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    //           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+    //           enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    //           nisi ut aliquip ex ea commodo consequat.
+    //         </p>
+    //       </div>
+    //     {/* </div> */}
+    //     <div className="max-w-md lg:max-w-none object-cover z-[999] pl-20">
+    //       {/* image */}
+    //       <Image
+    //         src={"/img1.png"}
+    //         width={800}
+    //         height={800}
+    //         alt=""
+    //         className="translate-z-0 w-full h-auto rotate-3 rounded-2xl shadow-lg shadow-black/10"
+    //       />
+    //     </div>
+    //   </div>
+    // </section>
 
-          <motion.span
-            className="absolute bottom-0 right-0 text-3xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.2,
-            }}
+
+    <section className="flex flex-col-reverse sm:flex-row gap-y-10 sm:gap-x-[5rem] mt-[1rem] items-center">
+        {/* text */}
+          <div
+            className="h-full container"
           >
-            👋
-          </motion.span>
+            {/* title */}
+            <h1 className="h1">
+              Transforming Ideas <br /> Into{" "}
+              <span className="text-amber-950">Digital Reality</span>
+            </h1>
+            <br />
+            {/* subtitle */}
+            <p className=" text-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        <div className="lg:max-w-none object-cover z-[999]">
+          {/* image */}
+          <Image
+            src={"/img1.png"}
+            width={800}
+            height={800}
+            alt=""
+            className="translate-z-0 w-full max-w-[12rem] sm:max-w-md rotate-3 rounded-2xl shadow-lg shadow-black/10"
+          />
         </div>
-      </div>
-
-      <motion.p
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <span className="font-bold">Hello, I'm Ricardo.</span> I'm a{" "}
-        <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">8 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
-      </motion.p>
     </section>
   );
 }

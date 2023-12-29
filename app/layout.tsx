@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
 import ParticlesContainer from "@/components/particlesContainer";
-import HeaderPrac from "@/components/headerPrac";
+import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ThemeContextProvider from "@/context/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,17 +20,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        // className={`${inter.className} flex relative justify-center w-full sm:w-[95%] sm:px:8 bg-zinc-50 text-gray-950`}
-        className={`${inter.className} flex justify-center w-full bg-zinc-50 text-gray-950`}
-      >
-        <ParticlesContainer /> 
-        <div className=" bg-white w-full h-full sm:w-[70%] sm:min-w-[40rem] sm:px-[2%] max-w-[90rem] z-[999] opacity-90">
-          <HeaderPrac />
-          {children}
-          <Footer />
-        </div>
-      </body>
+      <ThemeContextProvider>
+        <body
+          className={`${inter.className} flex justify-center w-full h-full bg-zinc-50 text-gray-950 dark:bg-black dark:text-white`}
+        >
+          <ParticlesContainer />
+          <div className=" bg-white dark:bg-zinc-900 ring-1 ring-zinc-100 dark:ring-zinc-300/20 w-full h-full sm:w-[70%] sm:min-w-[40rem] sm:px-[2%] max-w-[90rem] z-[999] opacity-90">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </body>
+      </ThemeContextProvider>
     </html>
   );
 }
