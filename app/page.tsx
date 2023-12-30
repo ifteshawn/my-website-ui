@@ -1,7 +1,7 @@
 "use client";
 
 import { ProfileData, fetchProfile } from "@/actions/fetchProfile";
-import Intro from "@/components/Intro";
+import Intro from "@/components/intro";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Nav from "@/components/nav";
