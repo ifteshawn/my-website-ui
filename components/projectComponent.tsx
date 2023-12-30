@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ProjectData } from "@/actions/fetchProfile";
+import { ProjectData } from "@/lib/types";
 
 // type ProjectProps = (typeof projectsData)[number];
 type ProjectProps = ProjectData;

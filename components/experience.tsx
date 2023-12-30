@@ -8,7 +8,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useTheme } from "@/context/theme-context";
-import { Experience, ProfileData } from "@/actions/fetchProfile";
+import { Experience, ProfileData } from "@/lib/types";
 import { LuGraduationCap } from "react-icons/lu";
 import { FaReact } from "react-icons/fa";
 import { CgWorkAlt } from "react-icons/cg";

@@ -8,7 +8,16 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { credentialsData } from "@/lib/data";
 import { useTheme } from "@/context/theme-context";
-import { Credential, ProfileData } from "@/actions/fetchProfile";
+import { Credential, ProfileData } from "@/lib/types";
+import { LuGraduationCap } from "react-icons/lu";
+import { CgWorkAlt } from "react-icons/cg";
+import { FaReact } from "react-icons/fa";
+
+const icons = [
+  { icon: React.createElement(FaReact) },
+  { icon: React.createElement(FaReact) },
+  { icon: React.createElement(FaReact) },
+];
 
 export default function Education(props: ProfileData) {
   const { theme } = useTheme();
@@ -35,7 +44,7 @@ export default function Education(props: ProfileData) {
                 borderRight: "0.4rem solid #9ca3af",
               }}
               date={item.date}
-              icon={item.icon}
+              icon={icons[index].icon}
               iconStyle={{
                 background:
                   theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",

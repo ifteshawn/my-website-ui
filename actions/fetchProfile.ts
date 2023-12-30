@@ -1,37 +1,6 @@
-export type Skill = {
-  title?: string;
-  tools?: string[];
-};
+"use server";
 
-export type Credential = {
-  title?: string;
-  institute?: string;
-  description?: string;
-  icon?: string;
-  date?: string;
-};
-
-export type ProjectData = {
-  title?: string;
-  description?: string;
-  tags?: string[];
-  imageUrl?: string;
-};
-
-export type Experience = {
-  title?: string;
-  location?: string;
-  description?: string;
-  icon?: string;
-  date?: string;
-};
-
-export type ProfileData = {
-  experiences?: Experience[];
-  projects?: ProjectData[];
-  credentials?: Credential[];
-  skills?: Skill[];
-};
+import { ProfileData } from "@/lib/types";
 
 const validateProfileData = (profileData: ProfileData) => {
   if (typeof profileData === "object" && profileData !== null) {
@@ -47,18 +16,26 @@ const validateProfileData = (profileData: ProfileData) => {
 };
 
 const baseUrl = "http://localhost:5082";
-const endpoint = "/api/profiledata/IFTE";
+const endpoint = "/api/profiledata/ifte";
 const url = `${baseUrl}${endpoint}`;
+const apiKey = process.env.REACT_APP_API_KEY;
 
-export const fetchProfile = async () : Promise<ProfileData> => {
+export const fetchProfile = async (): Promise<ProfileData> => {
+  if (!apiKey) {
+    throw new Error("API key is missing.");
+  }
+
   try {
     const response = await fetch(url, {
       method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+      },
     });
 
     if (response.ok) {
       const data = await response.json();
-      return data;
       if (validateProfileData(data)) {
         return data;
       } else {

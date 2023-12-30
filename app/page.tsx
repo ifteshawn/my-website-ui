@@ -1,17 +1,18 @@
 "use client";
 
-import { ProfileData, fetchProfile } from "@/actions/fetchProfile";
+import { fetchProfile } from "@/actions/fetchProfile";
+import { ProfileData } from "@/lib/types";
 import Intro from "@/components/intro";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Nav from "@/components/nav";
 import Projects from "@/components/projects";
 import { useEffect, useState } from "react";
-// import ThemeSwitcher from "@/components/theme-switcher";
 
 export default function Home() {
     const [profile, setProfile] = useState<ProfileData | null>(null);
     useEffect(() => {
+      console.log("fetching");
       const fetchData = async () => {
         const profile = await fetchProfile();
         setProfile(profile);

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Experience from "./experience";
 import Education from "./education";
 import Skills from "./skills";
-import { ProfileData } from "@/actions/fetchProfile";
+import { ProfileData } from "@/lib/types";
 
 export default function About(props: ProfileData) {
   const [index, setIndex] = useState(0);

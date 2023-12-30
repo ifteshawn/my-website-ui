@@ -3,7 +3,7 @@ import React from "react";
 import Project from "./projectComponent";
 import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { ProfileData, ProjectData } from "@/actions/fetchProfile";
+import { ProfileData, ProjectData } from "@/lib/types";
 
 export default function Projects(props: ProfileData) {
   const [currentIndex, setCurrentIndex] = useState(0);

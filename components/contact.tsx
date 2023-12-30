@@ -47,7 +47,7 @@ export default function Contact() {
         </div>
         <input
           className="h-14 my-3 px-4 rounded-lg border border-black dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="senderSubject"
+          name="subject"
           type="text"
           required
           maxLength={500}

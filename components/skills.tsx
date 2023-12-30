@@ -1,4 +1,4 @@
-import { ProfileData, Skill } from "@/actions/fetchProfile";
+import { ProfileData, Skill } from "@/lib/types";
 import { skillsData } from "@/lib/data";
 import React from "react";
 
