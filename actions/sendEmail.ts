@@ -1,7 +1,7 @@
 "use server";
 
-const baseUrl = "http://localhost:5082";
-// const baseUrl = process.env.REACT_APP_API_URL;
+// const baseUrl = "http://localhost:5082";
+const baseUrl = process.env.REACT_APP_API_URL;
 const endpoint = "/api/MailData";
 const url = `${baseUrl}${endpoint}`;
 const apiKey = process.env.REACT_APP_API_KEY;
