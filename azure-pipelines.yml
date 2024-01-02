@@ -20,21 +20,17 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-- task: CopyFiles@2
-  inputs:
-    sourceFolder: '$(System.DefaultWorkingDirectory)'
-    contents: 'build/**'
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
-  displayName: 'Copy project files'
-
 - task: ArchiveFiles@2
   displayName: 'Archive sources'
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    rootFolderOrFile: '.'
     includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
 
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
     publishLocation: 'pipeline'
   displayName: 'Publish npm artifact'
