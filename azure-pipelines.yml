@@ -23,15 +23,21 @@ steps:
 - task: ArchiveFiles@2
   displayName: 'Archive sources'
   inputs:
-    rootFolderOrFile: $(Build.SourcesDirectory)
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
     includeRootFolder: false
 
 - task: CopyFiles@2
-  displayName: 'Copy ARM templates'
   inputs:
-    SourceFolder: deployment
-    Contents: '*.json'
-    TargetFolder: $(build.artifactstagingdirectory)/Templates
+    sourceFolder: '$(DefaultWorkingDirectory)'
+    contents: |
+       src/*
+       public/*
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy project files'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
+- task: PublishPipelineArtifact@1
+  inputs:
+    artifactName: e2e-server
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    publishLocation: 'pipeline'
+  displayName: 'Publish npm artifact'
