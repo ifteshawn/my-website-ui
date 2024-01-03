@@ -19,25 +19,25 @@ steps:
   displayName: 'npm install'
   inputs:
     command: 'install'
-    workingDir: ('System.DefaultWorkingDirectory')
+    workingDir: $('System.DefaultWorkingDirectory')
   
 - task: Npm@1
   displayName: 'npm run lint'
   inputs:
     command: custom
-    workingDir: ('System.DefaultWorkingDirectory')
+    workingDir: $('System.DefaultWorkingDirectory')
     customCommand: 'run lint'
 
 - task: Npm@1
   displayName: 'npm run build'
   inputs:
     command: custom
-    workingDir: ('System.DefaultWorkingDirectory')
+    workingDir: $('System.DefaultWorkingDirectory')
     verbose: false
     customCommand: 'run build'
 
 - script: 'rm -rf node_modules'
-  workingDirectory: ('System.DefaultWorkingDirectory')
+  workingDirectory: $('System.DefaultWorkingDirectory')
   displayName: 'Delete Node Modules'
 
 - task: ArchiveFiles@2
