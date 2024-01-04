@@ -36,6 +36,10 @@ steps:
     verbose: false
     customCommand: 'run build'
 
+- script: 'rm -rf node_modules'
+  workingDirectory: '$(System.DefaultWorkingDirectory)'
+  displayName: 'Delete Node Modules'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
