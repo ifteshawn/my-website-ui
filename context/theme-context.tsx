@@ -37,7 +37,8 @@ export default function ThemeContextProvider({
     if (localTheme) {
       setTheme(localTheme);
       document.documentElement.classList.add(localTheme);
-    } else if (window.matchMedia("prefers-color-scheme: dark").matches) {
+    } else if (window.matchMedia("prefers-color-scheme: light").matches) {
+      console.log("dark");
       setTheme("dark");
       document.documentElement.classList.add("dark");
     }

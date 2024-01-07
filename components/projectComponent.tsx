@@ -4,9 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ProjectData } from "@/lib/types";
 
-// type ProjectProps = (typeof projectsData)[number];
 type ProjectProps = ProjectData;
-
 
 export default function Project({
   title,
