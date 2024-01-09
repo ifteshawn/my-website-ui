@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Contact() {
-  const { ref } = useSectionInView("Contact", 0.5);
+  const { ref } = useSectionInView("Contact", "0px 0px -60%");
 
   const initialErrors = {
     senderName: { error: false, message: "" },
@@ -69,6 +69,7 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
+      ref={ref}
       className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
       initial={{
         opacity: 0,
@@ -77,12 +78,11 @@ export default function Contact() {
         opacity: 1,
       }}
       transition={{
-        duration: 1,
+        duration: 3,
       }}
       viewport={{
         once: true,
       }}
-      ref={ref}
     >
       <h2 className="h2 text-center mb-12">
         Let's <span className="text-amber-800">connect.</span>

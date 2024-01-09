@@ -18,7 +18,7 @@ export default function Nav() {
     // <div className="fixed flex sm:flex-col w-full sm:w-[3rem] bottom-0 right-0 sm:right-[9%] sm:top-1/2 sm:-translate-y-1/2">
     <div className="fixed sm:flex-col w-full sm:w-[3rem] bottom-0 sm:right-[1%] sm:top-[60%] sm:-translate-y-1/2">
       <motion.nav
-        className="flex h-[3.5rem] items-center justify-center sm:gap-y-[3rem] sm:h-max px-8 sm:px-3.5 sm:py-5 sm:rounded-full z-[999] 
+        className="flex h-[3.5rem] items-center justify-center sm:gap-y-[3rem] sm:h-max px-8 sm:px-3.5 sm:py-5 sm:rounded-full z-[2] 
       bg-gray-200/25 border border-white border-opacity-60 shadow-lg shadow-black/10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

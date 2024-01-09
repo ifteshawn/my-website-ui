@@ -10,7 +10,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
 export default function About(props: ProfileData) {
-  const { ref } = useSectionInView("About", 0);
+  const { ref } = useSectionInView("About", "-20% 0px -80%");
   const [index, setIndex] = useState(0);
 
   const fadeInAnimationVariants = {

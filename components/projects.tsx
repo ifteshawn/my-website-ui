@@ -9,7 +9,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
 export default function Projects(props: ProfileData) {
-  const { ref } = useSectionInView("Projects", 1);
+  const { ref } = useSectionInView("Projects", "-40% 0px -60%");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {

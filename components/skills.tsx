@@ -33,7 +33,7 @@ export default function Skills(props: ProfileData) {
               }}
               custom={itemIndex}
             >
-              <div className="flex sm:justify-end min-w-[7rem] sm:min-w-[11.5rem] md:min-w-[13rem] max-w-[7rem] sm:max-w-none">
+              <div className="flex sm:justify-end min-w-[7rem] sm:min-w-[12rem] md:min-w-[13rem] max-w-[7rem] sm:max-w-none">
                 {item.title}:
               </div>
               <div className="flex flex-wrap gap-2">
