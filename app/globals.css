@@ -16,3 +16,17 @@ html.dark {
   font-size: 12px;
   text-align: left;
 }
+
+.h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
