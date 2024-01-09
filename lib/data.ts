@@ -42,11 +42,6 @@ export const links = [
     hash: "#about",
     icon: React.createElement(LuUser2),
   },
-  // {
-  //   name: "Services",
-  //   hash: "#services",
-  //   icon: React.createElement(LuBriefcase),
-  // },
   {
     name: "Projects",
     hash: "#projects",

@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 export default function Home() {
     const [profile, setProfile] = useState<ProfileData | null>(null);
     useEffect(() => {
-      console.log("fetching");
       const fetchData = async () => {
         const profile = await fetchProfile();
         setProfile(profile);

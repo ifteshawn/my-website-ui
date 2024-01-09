@@ -1,9 +1,13 @@
-import React from "react";
+"use client"
+
+import React, { use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Socials from "./socials";
+import { useTheme } from "@/context/theme-context";
 
-export default function header() {
+export default function Header() {
+  const { theme } = useTheme();
   return (
     // <header className="absolute top-[1rem] z-30 w-full flex items-center px-16 xl:px-0 xl:h-[90px]">
     <header className="flex items-center px-4 h-[10rem]">
@@ -12,7 +16,7 @@ export default function header() {
           {/* logo */}
           <Link href={"/"}>
             <Image
-              src={"/logo.png"}
+              src={theme == "light" ? "/logo-light-mode.png" : "/logo-dark-mode.png"}
               width={220}
               height={0}
               quality={95}

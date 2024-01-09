@@ -1,11 +1,15 @@
 "use client";
 import React from "react";
 import Project from "./projectComponent";
+import { useSwipeable } from "react-swipeable";
 import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { ProfileData, ProjectData } from "@/lib/types";
+import { useSectionInView } from "@/lib/hooks";
+import { motion } from "framer-motion";
 
 export default function Projects(props: ProfileData) {
+  const { ref } = useSectionInView("Projects", "-40% 0px -60%");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
@@ -22,30 +26,49 @@ export default function Projects(props: ProfileData) {
     setCurrentIndex(newIndex);
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: nextSlide,
+    onSwipedRight: prevSlide,
+  });
+
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
-    <section>
+    <motion.section
+      id="projects"
+      ref={ref}
+      className="scroll-mt-28"
+      variants={fadeInAnimationVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+    >
       {" "}
       <h2 className="h2 text-center mb-12">Projects</h2>
-      <div className="flex bg-center max-w-3xl relative group">
+      <div className="flex bg-center max-w-3xl relative group" {...handlers}>
         {props.projects?.map((item: ProjectData, itemIndex: any) => {
           return (
-             // <div key={itemIndex} className={`flex ${itemIndex === currentIndex ? "opacity-100 transition-transform -translate-x-full" : "opacity-0"} transition-opacity duration-300`} >
             <div
               key={itemIndex}
               className={`flex ${
                 itemIndex === currentIndex ? "flex" : "hidden"
               }`}
             >
-              {/* <div key={itemIndex} className="transition-opacity duration-300" style={{ opacity: itemIndex === currentIndex ? 1 : 0 }} > */}
               <Project {...item} />
             </div>
           );
         })}
-
-        {/* <div className=" transition-opacity duration-500"
-        style={{ opacity: currentIndex === -1 ? 0 : 1 }}>
-            <Project {...projectsData[currentIndex]} />
-         </div> */}
 
         {/* <!-- Slider indicators --> */}
         <div className="absolute flex items-center justify-center gap-x-2 bottom-0 w-full mb-4">
@@ -75,24 +98,6 @@ export default function Projects(props: ProfileData) {
           className="absolute top-1/2 -translate-x-0 -translate-y-1/2 right-5 text-3xl rounded-full p-2 bg-black/20 text-white cursor-pointer hidden group-hover:flex"
         />
       </div>
-    </section>
+    </motion.section>
   );
-}
-
-{
-  /* <div className="relative w-full h-full">
-      <div className="flex transition-transform duration-500 ease-in-out">
-        {projectsData.map((item, itemIndex) => {
-          return (
-            <div
-              key={itemIndex}
-              className={`flex ${
-                itemIndex === currentIndex ? "opacity-100" : "opacity-0"
-              } transition-opacity duration-500`}
-            >
-              <Project {...item} />
-            </div>
-          );
-        })}
-      </div> */
 }
