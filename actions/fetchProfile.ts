@@ -33,6 +33,7 @@ export const fetchProfile = async (): Promise<ProfileData> => {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
       },
+      cache: 'no-store' 
     });
 
     if (response.ok) {
