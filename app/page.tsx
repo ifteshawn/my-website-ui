@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      // await new Promise((resolve) => setTimeout(resolve, 3000));
       try {
         const profile = await fetchProfile();
         setProfile(profile);
@@ -50,18 +50,6 @@ export default function Home() {
           <Contact />
         </>
       )}
-      
-      {/* {error ? (
-        <ErrorPage />
-      ) : (
-        <>
-          <Intro />
-          <Nav />
-          <About {...profile} />
-          <Projects {...profile} />
-          <Contact />
-        </>
-      )} */}
     </main>
   );
 }
