@@ -15,6 +15,7 @@ import { CgWorkAlt } from "react-icons/cg";
 
 const icons = [
   { icon: React.createElement(LuGraduationCap) },
+  { icon: React.createElement(LuGraduationCap) },
   { icon: React.createElement(CgWorkAlt) },
   { icon: React.createElement(FaReact) },
   { icon: React.createElement(FaReact) },

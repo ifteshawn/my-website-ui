@@ -36,18 +36,18 @@ export default function Intro() {
             {/* subtitle */}
             <div className="text-justify">
               <h3>
-                What got me into this field?{" "}
+                What led me to this field?{" "}
                 <span className="font-semibold text-amber-900 dark:text-white">
                   Short answer?
                 </span>{" "}
-                - Laziness and a distaste for monotony.
+                - A natural curiosity and a distaste for monotony.
               </h3>
               <br></br>
               <h3>
                 <span className="font-semibold text-amber-900 dark:text-white">
                   Long answer? and a sprinkle of wisdom?
                 </span>{" "}
-                - Well... you might want to grab a coffee for this...
+                - Well... you might want to grab a seat for this...
               </h3>
               <p>
                 After a degree in economics (which I had no interest in btw), I
@@ -85,10 +85,9 @@ export default function Intro() {
                 <span className="text-amber-900 dark:text-white">
                   software development
                 </span>{" "}
-                (obviously the good), and the other involving hating my job,
-                whining about it, sucking it up (as people would often advise),
-                and eventually quitting, leading to a cycle of dissatisfaction
-                about life. You see where I'm going with this?
+                (obviously the good), and the other involving frustration, complaints, 
+                and eventually quitting. But quitting and complaining never lead to positive outcomes. 
+                The real answer lies in patience and persistence.
               </p>
               <br></br>
               <p>
@@ -96,13 +95,6 @@ export default function Intro() {
                 was in, I would not have discovered something good. Quitting and
                 hating is not the answer. The answer is being patient while we
                 find a way. Anyway.. life's a roller coaster. Enjoy it.
-              </p>
-              <br></br>
-              <p>
-                This is where you say -{" "}
-                <span className="text-amber-900 dark:text-white">
-                  "Cool story bro."
-                </span>
               </p>
             </div>
           </div>

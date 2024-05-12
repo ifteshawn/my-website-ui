@@ -27,6 +27,7 @@ export const fetchProfile = async (): Promise<ProfileData> => {
   }
 
   try {
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
     const response = await fetch(url, {
       method: "GET",
       headers: {
